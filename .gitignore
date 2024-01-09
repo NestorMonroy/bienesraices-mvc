@@ -1,0 +1,9 @@
+# General
+.vagrant/
+.vscode/
+logs/app/*
+logs/apt-cache/*
+# Log files
+*.log
+*.deb
+*.apt
