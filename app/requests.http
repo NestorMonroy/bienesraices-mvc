@@ -1,0 +1,7 @@
+### GET request with a header
+GET {{host}}
+Accept: application/json
+
+### Send POST request with json body
+POST {{host}}
+Content-Type: application/json

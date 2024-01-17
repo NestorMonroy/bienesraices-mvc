@@ -7,3 +7,7 @@ logs/apt-cache/*
 *.log
 *.deb
 *.apt
+
+app/node_modules/*
+
+.idea/
