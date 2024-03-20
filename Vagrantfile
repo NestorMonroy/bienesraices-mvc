@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   # `vagrant box outdated`. This is not recommended.
   # config.vm.box_check_update = false
 
-  config.vm.hostname = "node"
+  config.vm.hostname = "bienes-raices"
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
@@ -29,7 +29,6 @@ Vagrant.configure("2") do |config|
   config.vm.define :app do |app|
     app.vm.provision :shell, :path => "script/vagrant-app.sh"
     app.vm.network :private_network, ip: "10.11.12.2"
-    app.vm.synced_folder "./", "/vagrant"
   end
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -63,13 +62,14 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+  config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
+    vb.name = "bienes-raices"
   #   vb.memory = "1024"
-  # end
+  end
   #
   # View the documentation for the provider you are using for more
   # information on available options.

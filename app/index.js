@@ -7,8 +7,10 @@ import usuarioRoutes from "./routes/usuarioRoutes.js";
 const app = express()
 
 
-app.use('/', usuarioRoutes)
+app.use('/auth', usuarioRoutes)
 
+app.set('view engine', 'pug')
+apt.set('views', './views')
 
 //Definir un puerto
 const port = 3000;
